@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <router-link :to="{ name: 'home' }" class="navbar-brand"
-        >Laravel-Vue SPA</router-link
+        >Laravel Vue SPA</router-link
       >
       <button
         class="navbar-toggler"
@@ -19,7 +19,7 @@
               data-toggle="collapse"
               :to="{ name: 'home' }"
             >
-              Home
+              Inicio
             </router-link>
           </li>
 
@@ -29,23 +29,23 @@
               data-toggle="collapse"
               :to="{ name: 'about' }"
             >
-              About
+              Sobre
             </router-link>
           </li>
           <li class="nav-item">
             <router-link
               class="nav-link"
               data-toggle="collapse"
-              :to="{ name: 'users' }"
+              :to="{ name: 'listUsers' }"
             >
-              Users
+              Usuários
             </router-link>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" style="margin-top:15px;">
       <router-view></router-view>
     </div>
   </div>

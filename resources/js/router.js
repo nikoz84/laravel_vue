@@ -4,7 +4,10 @@ import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
 import About from './components/pages/About.vue';
 import Users from './components/pages/Users.vue';
-import User from './components/forms/User.vue';
+import formUser from './components/forms/formUser.vue';
+import ShowUser from './components/pages/ShowUser.vue';
+import ListUser from './components/pages/ListUsers.vue';
+
 
 Vue.use(VueRouter);
 
@@ -24,13 +27,30 @@ const router = new VueRouter({
         },
         {
             path: '/users',
-            name: 'users',
             component: Users,
-            children: [{
-                path: 'id/:id',
+            children: [
+                {
+                    path: '/',
+                    name: 'listUsers',
+                    component: ListUser
+                },
+                {
+                    path: 'create',
+                    name: 'createUser',
+                    component: formUser
+                },
+                {
+                path: 'edit/:id',
                 name: 'editUser',
-                component: User
-            }]
+                component: formUser
+                },
+                {
+                    path: 'show/:id',
+                    name: 'showUser',
+                    component: ShowUser
+                }
+            ]
+
         }
     ]
 });

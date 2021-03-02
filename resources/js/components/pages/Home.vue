@@ -1,7 +1,7 @@
 <template>
-    <div>
-        Bemvindo
-    </div>
+    <section>
+        <h2>Pagina de inicio</h2>
+    </section>
 </template>
 <script>
 export default {
