@@ -2,15 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpaController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Web\UserController;
+use App\Http\Controllers\CanalController;
 
-Route::get('/{any}', [SpaController::class, 'index'])->where('any', '.*');
+Route::get('/home', [SpaController::class, 'showIndex'])->name('web.home');
+Route::get('/sobre', [SpaController::class, 'showSobre'])->name('web.sobre');
+Route::get('/galeria', [SpaController::class, 'showGaleria'])->name('web.galeria');
+
+Route::get('/admin/usuarios', [UserController::class, 'index'])->name('admin.users.index');
+Route::get('/{slug}', [CanalController::class, 'index'])->name('web.canal');
+
+//Route::get('/{any}', [SpaController::class, 'index'])->where('any', '.*');
